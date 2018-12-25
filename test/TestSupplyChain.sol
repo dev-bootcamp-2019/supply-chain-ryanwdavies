@@ -40,7 +40,6 @@ contract TestSupplyChain {
   SupplyChain public supplyChain;
   ThrowProxy public seller;
   ThrowProxy public buyer;
-  ThrowProxy public randomUser;
 
   enum State { ForSale, Sold, Shipped, Received }
 
@@ -183,9 +182,9 @@ contract TestSupplyChain {
 
 // ThrowProxy contract
 contract ThrowProxy {
-  address payable target;
+  address target;
 
-  constructor (address payable _target) public {
+  constructor (address _target) public {
     target = _target;
   }
 

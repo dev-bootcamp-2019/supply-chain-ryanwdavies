@@ -95,13 +95,6 @@ contract SupplyChain {
     emit Received(sku);  
   }
 
-  function getState(uint sku) 
-    view  
-    public 
-    returns (uint)
-  { 
-    return uint(items[sku].state); 
-  }
 
   /* We have these functions completed so we can run tests, just ignore it :) */
   function fetchItem(uint _sku) public view 
@@ -116,8 +109,16 @@ contract SupplyChain {
     return (name, sku, price, state, seller, buyer);
   }
 
-  // Fallback function - payanle to allow contract to receive ether
-  function () external payable {
+  function getState(uint sku) 
+    view  
+    public 
+    returns (uint)
+  { 
+    return uint(items[sku].state); 
+  }
+
+   // Fallback function
+   function () external {
     revert();
   }
 
