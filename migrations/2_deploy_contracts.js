@@ -1,7 +1,5 @@
-//var SimpleBank = artifacts.require("./SimpleBank.sol");
 var SupplyChain = artifacts.require("./SupplyChain.sol");
 
-module.exports = function(deployer) {
-  //deployer.deploy(SimpleBank);
+module.exports = function(deployer, accounts) {
   deployer.deploy(SupplyChain);
 };
